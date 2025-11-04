@@ -39,6 +39,35 @@ Through a structured data engineering workflow, missing values, class imbalance,
 
 ---
 
+  Project Workflow
+
+### 1️⃣ Data Preprocessing (`src/data_preprocessor.py`)
+- Reads the raw dataset (`Diabetes Missing Data.csv`)
+- Replaces invalid zero values (e.g., glucose, insulin, BMI) with NaN
+- Imputes missing data using **median strategy**
+- Performs **feature engineering**, including:
+  - Glucose-to-BMI Ratio  
+  - Age-Weighted Pedigree Score  
+  - Normalized Insulin Index
+- Standardizes numeric features using **StandardScaler**
+- Resolves class imbalance using **SMOTE (Synthetic Minority Oversampling Technique)**
+- Saves the preprocessed dataset as `cleaned_diabetes_data.csv`
+
+### 2️⃣ Data Exploration (`notebook/analysis.ipynb`)
+- Performs **Exploratory Data Analysis (EDA)** on both raw and cleaned data
+- Visualizes distributions and correlations using:
+  - Histograms
+  - Boxplots
+  - Correlation heatmaps
+- Compares the dataset before and after preprocessing
+- Validates class balance after applying SMOTE
+
+### 3️⃣ Output
+- A high-quality dataset free from missing values and inconsistencies
+- Balanced diabetic/non-diabetic classes
+- Enhanced features for better model interpretability
+- Cleaned dataset ready for model training
+
 
 
 
